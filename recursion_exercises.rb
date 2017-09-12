@@ -56,3 +56,12 @@ puts reverse("atom") # => "mota"
 puts reverse("q") # => "q"
 puts reverse("id") # => "di"
 puts reverse("") # => ""
+
+
+def upcase(string)
+  return string.upcase if string.length <= 1
+
+  string[0].upcase + upcase(string[1..-1])
+end
+
+puts upcase("hello")
