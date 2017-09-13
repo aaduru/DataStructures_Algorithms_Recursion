@@ -44,24 +44,30 @@ end
 p bubblesort([7,6,5,9,8,4,3,1,2,0])
 
 
-  def mergesort(arr)
-    return arr if arr.length < 2
-    middle_index = arr.length / 2
+def mergesort(arr)
+  return arr if arr.length < 2
+  middle_index = arr.length / 2
 
-    left, right = arr.take(middle_index), arr.drop(middle_index)
-    sorted_left, sorted_right = mergesort(left), mergesort(right)
+  left, right = arr.take(middle_index), arr.drop(middle_index)
+  sorted_left, sorted_right = mergesort(left), mergesort(right)
 
-    merge(sorted_left, sorted_right)
+  merge(sorted_left, sorted_right)
+end
+
+def merge(left, right)
+  merged_array = []
+  until left.empty? || right.empty?
+    merged_array <<
+      ((left.first < right.first) ? left.shift : right.shift)
   end
 
-  def merge(left, right)
-    merged_array = []
-    until left.empty? || right.empty?
-      merged_array <<
-        ((left.first < right.first) ? left.shift : right.shift)
-    end
-
-    merged_array + left + right
-  end
+  merged_array + left + right
+end
 
 p mergesort([7,6,5,9,8,4,3,1,2,0])
+
+
+def insertionsort(arr)
+end
+
+def insertionsort_order()
