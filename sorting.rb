@@ -67,7 +67,17 @@ end
 p mergesort([7,6,5,9,8,4,3,1,2,0])
 
 
-def insertionsort(arr)
+def insertion_sort(arr)
+  (arr.length ).times do |i|
+    val = arr[i]
+    j = i - 1
+    while j >= 0 and arr[j] > val
+      arr[j+1] = arr[j]
+      j -= 1
+    end
+    arr[j+1] = val
+  end
+  arr
 end
-
-def insertionsort_order()
+ary = [7,6,5,9,8,4,3,1,2,0]
+p insertion_sort(ary)
