@@ -54,7 +54,7 @@ class PolyTreeNode
 
     @children.each do |child|
       current_child = child.dfs(target)
-      return current_child if current_child
+      return current_child unless current_child.nil?
     end
     nil
   end
