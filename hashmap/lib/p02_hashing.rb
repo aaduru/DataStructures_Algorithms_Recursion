@@ -23,7 +23,16 @@ class String
   def hash
     chars.map(&:ord).hash
 
-    #final_hash.to_i.hash
+  #   def hash
+  #   characters = self.chars
+  #   final_hash = ''
+  #
+  #   characters.each do |letter|
+  #     final_hash += letter.ord.to_s
+  #   end
+  #
+  #   final_hash.to_i.hash
+  # end
   end
 end
 
